@@ -1,13 +1,23 @@
+import Header from "./components/Header"
+import { ToastContainer } from 'react-toastify'
+import Hero from "./components/Hero"
+import PatientList from "./components/PatientList"
+import PatientForm from "./components/PatientForm"
+import "react-toastify/dist/ReactToastify.css"
+
 function App() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold text-teal-600">
-        PetCare
-      </h1>
-      <p className="read-the-docs">
-        PetCare is a web application designed to help veterinary clinics manage and track their patients. It allows users to register new patients with important details such as name, species, breed, age, and medical history.
-      </p>
+      <Header />
+      <Hero />
+      <main className="container mx-auto px-6">
+        <div className="mt-12 md:flex">
+          <PatientForm />
+          <PatientList />
+        </div>
+      </main>
+      <ToastContainer />
     </>
   )
 }
